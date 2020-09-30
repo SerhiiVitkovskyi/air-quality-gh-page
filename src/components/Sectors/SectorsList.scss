@@ -1,0 +1,128 @@
+.sectors {
+  padding: 50px 0;
+
+  &-title {
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    color: #fff;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  &-subtitle {
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin: 42px 20px 30px;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &-item {
+      position: relative;
+      width: calc((100% / 3) - 70px);
+      height: 240px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      &-name {
+        width: 100%;
+        text-align: center;
+        font-size: 23px;
+        line-height: 30px;
+        color: #222222;
+        background: rgba(255, 255, 255, 0.83);
+      }
+
+      &-tooltip {
+        position: absolute;
+        left: 80%;
+        width: 440px;
+        pointer-events: none;
+        appearance: none;
+        background-color: #DADADA;
+        padding: 16px 16px 16px 75px;
+        clip-path: polygon(100% 0, 100% 100%, 75px 100%, 0 50%, 75px 0);
+        z-index: 1;
+
+        &-switched {
+          left: initial;
+          right: 80%;
+          clip-path: polygon(calc(100% - 75px) 0, 100% 50%, calc(100% - 75px) 100%, 0 100%, 0 0);
+          padding: 16px 75px 16px 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .sectors {
+    
+    &-title {
+      font-weight: normal;
+      font-size: 35px;
+      line-height: 41px;
+      color: #fff;
+      text-align: center;
+      margin-left: 20px;
+      margin-right: 20px;  
+    }
+  
+    &-subtitle {
+      font-weight: normal;
+      font-size: 23px;
+      line-height: 27px;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 42px 20px 30px;
+    }
+  
+    
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      &-item {
+        width: 340px;//calc((100%) - 100px); //100%;//calc((100% / 3) - 70px);
+        display: grid;
+        grid-template-columns: auto;
+        height: 240px;     
+  
+        &-name {
+          width: 100%;
+          text-align: center;
+          font-size: 23px;
+          line-height: 30px;
+          color: #222222;
+          background: rgba(255, 255, 255, 0.83);
+        }
+  
+        &-tooltip {
+          position: absolute;
+          left: 10%;
+          top: 10%;
+          width: 310px;
+          height:  220px;
+          pointer-events: none;
+          appearance: tooltip;
+          background-color: #DADADA;
+          padding: 8px 16px 8px 8px;
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+          z-index: 1;
+        }
+      }
+    }  
+  } 
+}
